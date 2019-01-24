@@ -1,6 +1,6 @@
 {
   "name": "@nerdgeschoss/config",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "license": "MIT",
   "scripts": {
     "release": "yarn version --patch && git push --tags && yarn publish --non-interactive"
