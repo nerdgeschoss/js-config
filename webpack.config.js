@@ -9,7 +9,7 @@ const config = {
   mode,
   entry: './src/index.tsx',
   output: {
-    path: process.cwd() + 'dist',
+    path: process.cwd() + '/dist',
     filename: '[name].[hash].js',
     publicPath: '/',
   },
@@ -29,11 +29,20 @@ const config = {
         exclude: /node_modules/,
       },
       {
-        test: /\.s?css$/,
+        test: /\.scss$/,
         use: [
           mode !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader,
           'css-loader',
           'sass-loader',
+          'postcss-loader'
+        ],
+      },
+      {
+        test: /\.css$/,
+        use: [
+          mode !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader'
         ],
       },
       {
@@ -43,6 +52,10 @@ const config = {
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         use: ['file-loader'],
+      },
+      {
+        test: /\.ya?ml$/,
+        use: ['js-yaml-loader'],
       },
     ],
   },
@@ -55,7 +68,7 @@ const config = {
     }),
     new MiniCssExtractPlugin({
       filename: '[name].[hash].css',
-      chunkFilename: '[id].css',
+      chunkFilename: '[name]-[id]-[hash].css',
     }),
     new webpack.HotModuleReplacementPlugin(),
     new CopyWebpackPlugin([{ from: 'public' }]),

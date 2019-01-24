@@ -5,7 +5,9 @@ module.exports = {
   rules: {
     "interface-name": [true, "never-prefix"],
     "ordered-imports": false,
-    "object-literal-sort-keys": false
+    "object-literal-sort-keys": false,
+    "max-classes-per-file": false,
+    "no-string-literal": false
   },
   rulesDirectory: []
-}
+};
