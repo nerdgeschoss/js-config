@@ -33,8 +33,7 @@ const config = {
         use: [
           mode !== "production" ? "style-loader" : MiniCssExtractPlugin.loader,
           "css-loader",
-          "sass-loader",
-          "postcss-loader"
+          "sass-loader"
         ]
       },
       {
