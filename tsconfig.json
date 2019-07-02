@@ -3,7 +3,7 @@
     "jsx": "react",
     "target": "es5",
     "strict": true,
-    "lib": ["es2017", "dom"],
+    "lib": ["es2019", "dom"],
     "esModuleInterop": true,
     "module": "ESNext",
     "moduleResolution": "node",
